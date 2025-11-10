@@ -1,0 +1,79 @@
+# =========================================
+# 🐍 Python general
+# =========================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# =========================================
+# 🧪 Entornos virtuales
+# =========================================
+.env
+.venv
+env/
+venv/
+ENV/
+VENV/
+env.bak/
+venv.bak/
+
+# =========================================
+# 🧰 Archivos de configuración local
+# =========================================
+*.ini
+*.cfg
+*.toml
+*.json
+*.yaml
+*.yml
+
+# =========================================
+# 💾 Archivos temporales o de sistema
+# =========================================
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+*.bak
+*.old
+
+# =========================================
+# 🧩 Archivos de IDE (VSCode, PyCharm)
+# =========================================
+.vscode/
+.idea/
+*.code-workspace
+
+# =========================================
+# 📊 Archivos de datos
+# =========================================
+datos/
+*.csv
+*.xlsx
+*.xls
+
+# =========================================
+# 🧪 Resultados de pruebas
+# =========================================
+htmlcov/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+test_output/
+reports/
+
+# =========================================
+# 🚀 Distribución / build
+# =========================================
+build/
+dist/
+*.spec
