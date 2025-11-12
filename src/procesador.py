@@ -49,3 +49,4 @@ class Analizador:
             return totales[nombre]
         else:
             return 0.0
+
