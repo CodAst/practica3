@@ -11,8 +11,12 @@ def main():
 
     print("\nCompras para una provincia")
     provincia = input("\tIngrese el nombre de una provincia: ")
-    ventas = analizador.ventas_por_provincia(provincia)
-    print(f"\tVentas de {provincia}: ${ventas:,.2f}")
+    
+    try:
+        ventas = analizador.ventas_por_provincia(provincia)
+        print(f"\tVentas de {provincia}: ${ventas:,.2f}")
+    except KeyError:
+        print(f"\tError: La provincia '{provincia}' no existe en los datos")
     
 if __name__ == "__main__":
     main()

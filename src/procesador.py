@@ -38,15 +38,18 @@ class Analizador:
         return totales
 
     def ventas_por_provincia(self, nombre):
-        """
+            """
         Devuelve el total de ventas de una provincia específica.
         Ejemplo: ventas_por_provincia("Guayas") -> 2000.5
-        """
-        totales = self.ventas_totales_por_provincia()
-
+            """
+            totales = self.ventas_totales_por_provincia()
+        
+        # Normalizar el nombre (convertir a mayúsculas para coincidir con los datos)
+            nombre_normalizado = nombre.upper()
+        
         # Verificamos si la provincia está en los totales
-        if nombre in totales:
-            return totales[nombre]
-        else:
-            return 0.0
-
+            if nombre_normalizado in totales:
+                return totales[nombre_normalizado]
+            else:
+            # LANZAR KeyError como requieren las pruebas
+                raise KeyError(f"Provincia '{nombre}' no encontrada")
