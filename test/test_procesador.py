@@ -115,3 +115,55 @@ class TestAnalizador(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_7_exportaciones_por_mes_retorna_diccionario(self):
+        """
+        Prueba para exportaciones por mes: verificar que retorna un diccionario
+        """
+        resultado = self.analizador.exportaciones_totales_por_mes()
+        self.assertIsInstance(resultado, dict)
+
+    def test_8_exportaciones_por_mes_valores_no_negativos(self):
+        """
+        Prueba para exportaciones por mes: verificar valores no negativos
+        """
+        resultado = self.analizador.exportaciones_totales_por_mes()
+        for mes, total in resultado.items():
+            self.assertIsInstance(mes, str)
+            self.assertGreaterEqual(total, 0)
+
+    def test_9_exportaciones_por_mes_todos_los_mes(self):
+        """
+        Prueba para exportaciones por mes: verificar que hay 12 meses
+        """
+        resultado = self.analizador.exportaciones_totales_por_mes()
+        self.assertEqual(len(resultado), 12)  # 12 meses del año
+
+    def test_10_provincia_mayor_importaciones_retorna_tupla(self):
+        """
+        Prueba para provincia con mayor importaciones: verificar que retorna una tupla
+        """
+        resultado = self.analizador.provincia_mayor_importaciones()
+        self.assertIsInstance(resultado, tuple)
+        self.assertEqual(len(resultado), 2)  # (provincia, valor)
+
+    def test_11_provincia_mayor_importaciones_valores_correctos(self):
+        """
+        Prueba para provincia con mayor importaciones: verificar tipos de datos
+        """
+        resultado = self.analizador.provincia_mayor_importaciones()
+        if resultado:  # Solo si hay datos
+            provincia, valor = resultado
+            self.assertIsInstance(provincia, str)
+            self.assertIsInstance(valor, (int, float))
+            self.assertGreater(valor, 0)
+
+    def test_12_provincia_mayor_importaciones_existe_en_datos(self):
+        """
+        Prueba para provincia con mayor importaciones: verificar que la provincia existe
+        """
+        resultado = self.analizador.provincia_mayor_importaciones()
+        if resultado:
+            provincia, valor = resultado
+            # Verificar que la provincia existe en el resumen de ventas
+            self.assertIn(provincia, self.resumen_ventas)
