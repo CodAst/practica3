@@ -42,7 +42,7 @@ Se utilizó la librería `coverage` para medir la cobertura de código:
 ```bash
 # 1 Instalación
 pip install coverage
-#  2 Ejecución
+# 2 Ejecución
 coverage run -m unittest discover -s test -v
 # 3 Reporte
 coverage report
